@@ -10,7 +10,6 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-console.log('CHANGE')
 
 const dbUrl = 'mongodb+srv://alfred:alfred00@cluster0.2ct9x.mongodb.net/amazon';
 const store = new MongoDBStore({
