@@ -1,0 +1,23 @@
+nav.navbar {
+    background: #131921;
+}
+
+.btn-main {
+    background-color: #FEBD69;
+}
+
+.navbar-brand>h3 {
+    color: #FEBD69;
+}
+
+#search-field {
+    border: none;
+}
+
+#category-list {
+    border-radius: 0px;
+}
+
+.drop-shadow {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}

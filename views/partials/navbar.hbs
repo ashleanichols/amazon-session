@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-md d-none d-sm-none d-md-block navbar-dark">
+    <div class="container">
+        <div class="navbar-collapse">
+            <a href="/" class="navbar-brand">
+                <h3>Amazon</h3>
+            </a>
+            <form action="" class="form-inline w-100">
+                <div class="input-group w-100">
+                    <div class="input-group-prepend">
+                        {{!-- Drop down menu --}}
+                        <div class="dropdown show">
+                            <a href="#" class="btn btn-secondary dropdown-toggle" href="#" id="category-list"
+                                data-toggle="dropdown">All </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Laptops</a>
+                                <a href="#" class="dropdown-item">Electronics</a>
+                                <a href="#" class="dropdown-item">Other</a>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="search-field" class="form-control">
+                    <div class="input-group-append">
+                        <button class="btn btn-main"> <i class="fas fa-search"></i> </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<nav id="main-nav" class="navbar navbar-expand-sm navbar-dark" style="background-color:#232F3E">
+
+    <a href="/" class="navbar-brand m-auto d-block d-sm-block d-md-none d-lg-none">
+        <h2>Amazon</h2>
+    </a>
+
+    <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu"> 
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item mx-5">
+                <a href="/" class="nav-link {{#if productsActive}}active {{/if}}">Products</a>
+            </li>
+            <li class="nav-item mx-5">
+                <a href="/cart" class="nav-link {{#if activeCart}}active {{/if}}">Cart</a>
+            </li>
+            <li class="nav-item mx-5">
+                <a href="/orders" class="nav-link">Orders</a>
+            </li>
+
+            {{#if isAuthenticated}}
+            <li class="nav-item mx-5">
+                <a href="/admin/add-product" class="nav-link {{#if addProductActive}}active {{/if}}">Add Product</a>
+            </li>
+            <li class="nav-item mx-5">
+                <a href="/admin/products" class="nav-link {{#if adminProductsActive}} active {{/if}}">Admin Products</a>
+            </li>
+            {{/if}}
+        </ul>
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item mx-5">
+                <a href="/login" class="btn btn-warning text-white">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>

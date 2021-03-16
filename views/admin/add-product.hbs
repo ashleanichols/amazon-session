@@ -1,0 +1,28 @@
+<section class="container mt-5">
+    <form action="/admin/{{#if editMode}}edit-product{{else}}add-product {{/if}}" method="POST" class="p-4 bg-dark card"
+        style="box-shadow: 2px 2px 20px rgba(0,0,0,0.4);">
+        <h1 class="text-light text-center my-2">{{#if editMode}} Edit Product{{else}} ADD Product {{/if}} </h1>
+        <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Product Title" value="{{product.title}}">
+        </div>
+        <div class="form-group">
+            <input type="text" name="imageUrl" class="form-control" placeholder="Product Image" value="{{product.imageUrl}}">
+        </div>
+        <div class="form-group">
+            <input type="number" name="price" class="form-control" step="0.01" value="{{product.price}}" placeholder="Product Price">
+        </div>
+        <div class="form-group">
+            <textarea name="desc"class="form-control" placeholder="Product Description">
+
+                {{#if editMode}} {{product.desc}}{{/if}}
+            </textarea>
+        </div>
+        {{#if editMode}}
+        <input type="hidden" name="id" value="{{product.id}}">
+        {{/if}}
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-warning">{{#if editMode}} EDIT {{else}} ADD {{/if}} </button>
+        </div>
+    </form>
+</section>
